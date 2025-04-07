@@ -6,7 +6,10 @@ const app = express();
 const port = process.env.PORT || 10000;
 
 // Middleware para servir arquivos estáticos
+// Servindo arquivos da pasta public
 app.use(express.static(path.join(__dirname, 'public')));
+// Servindo arquivos da pasta raiz (para os arquivos CSS e JS fora de public)
+app.use(express.static(path.join(__dirname)));
 
 // Rota principal
 app.get('/', (req, res) => {
