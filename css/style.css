@@ -79,7 +79,7 @@ body {
 
 /* Adicionando um fundo sutil para o menu */
 .navbar {
-  background-color: #a9a9a9; /* Cor de fundo escura */
+  background-color: #c2c2c2; /* Cor de fundo escura */
   padding: 10px 0; /* Espaçamento interno */
 }
 
@@ -242,7 +242,7 @@ a:visited{
 }
 /*rodape*/
 footer {
-  background-color: #333; /* Cor de fundo escura */
+  background-color: #c2c2c2; /* Cor de fundo escura */
   color: white; /* Cor do texto */
   text-align: center; /* Alinha o texto ao centro */
   padding: 20px 0; /* Espaçamento dentro do rodapé */
@@ -253,7 +253,7 @@ footer {
 
 /* Estilo do formulário de registro */
 .registration-form {
-  background-color: #444; /* Cor de fundo para a área do formulário */
+  background-color: #797979; /* Cor de fundo para a área do formulário */
   padding: 20px;
   border-radius: 8px; /* Bordas arredondadas */
   margin-top: 20px;
