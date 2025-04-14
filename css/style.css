@@ -2,7 +2,7 @@
 body {
   margin: 0;
   padding: 0;
-  background-color: #f4f4f4;
+  background-color: #fff8f0;
 }
 
 /* Barra de navegação */
@@ -15,8 +15,11 @@ body {
 
 /* Logo */
 .logo img {
-  height: 120px;
-  width: 250px;
+  height: 130px;
+}
+img:hover {
+  transform: scale(1.10);
+  transition: transform 0.3s ease-in-out;
 }
 
 /* Menu */
@@ -63,7 +66,7 @@ body {
 
 /* Adicionando uma linha abaixo do item de menu ao passar o mouse */
 .menu ul li a::after {
-  content: '';
+  content: "";
   position: absolute;
   bottom: 0;
   left: 0;
@@ -79,7 +82,7 @@ body {
 
 /* Adicionando um fundo sutil para o menu */
 .navbar {
-  background-color: #c2c2c2; /* Cor de fundo escura */
+  background-color: #8c4c2e; /* Cor de fundo escura */
   padding: 10px 0; /* Espaçamento interno */
 }
 
@@ -121,7 +124,8 @@ body {
   color: #bdbecb;
 }
 
-.input:hover, .input:focus {
+.input:hover,
+.input:focus {
   box-shadow: 0 0 0 2.5px #f39c12, 0px 0px 25px -15px #000;
 }
 
@@ -179,7 +183,7 @@ body {
   border-radius: 100px;
   cursor: pointer;
   transition: 0.3s ease;
-  background-color:#f39c12; 
+  background-color: #f2542d;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -212,23 +216,23 @@ body {
   transition: 0.3s ease; /* Transição suave para cor */
 }
 /*links*/
-a{
+a {
   text-decoration: none;
   color: white;
 }
-a:hover{
+a:hover {
   text-decoration: none;
   color: white;
 }
-a:focus{
+a:focus {
   text-decoration: none;
   color: white;
 }
-a:visited{
+a:visited {
   text-decoration: none;
   color: white;
 }
-.fonte{
+.fonte {
   font-family: "Noto Serif Hentaigana", serif;
   font-optical-sizing: auto;
   font-style: normal;
@@ -236,13 +240,13 @@ a:visited{
   margin: 20px 10px;
   text-align: left;
 }
-.fonteL{
-  color: #c17606;
+.fonteL {
+  color: #e08e1f;
   padding-left: 50px;
 }
 /*rodape*/
 footer {
-  background-color: #c2c2c2; /* Cor de fundo escura */
+  background-color: #5a3b29; /* Cor de fundo escura */
   color: white; /* Cor do texto */
   text-align: center; /* Alinha o texto ao centro */
   padding: 20px 0; /* Espaçamento dentro do rodapé */
@@ -253,7 +257,7 @@ footer {
 
 /* Estilo do formulário de registro */
 .registration-form {
-  background-color: #797979; /* Cor de fundo para a área do formulário */
+  background-color: #a56c43; /* Cor de fundo para a área do formulário */
   padding: 20px;
   border-radius: 8px; /* Bordas arredondadas */
   margin-top: 20px;
@@ -291,26 +295,25 @@ footer {
 
 /* Estilo para mensagens de erro */
 .error-message {
-    color: #f39c12;
-    font-size: 0.9em;
-    margin-top: 5px;
-    margin-bottom: 10px;
+  color: #f39c12;
+  font-size: 0.9em;
+  margin-top: 5px;
+  margin-bottom: 10px;
 }
 
 /* Estilo para item de menu ativo */
 .menu-item.active a {
-    color: #f39c12; /* Cor laranja para destacar */
-    font-weight: bold;
-    border-bottom: 2px solid #f39c12;
+  color: #f39c12; /* Cor laranja para destacar */
+  font-weight: bold;
+  border-bottom: 2px solid #f39c12;
 }
 
 /* Estilo para a mensagem de busca */
 .search-message {
-    position: absolute;
-    background-color: white;
-    padding: 5px;
-    border-radius: 4px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    z-index: 1000;
+  position: absolute;
+  background-color: white;
+  padding: 5px;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
 }
-
