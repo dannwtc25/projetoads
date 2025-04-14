@@ -5,33 +5,38 @@ body {
   justify-content: center;
   align-items: center;
   height: 100vh;
+  flex-direction: column;
   margin: 0;
 }
 
 .container {
   background-color: white;
-  padding: 40px;
+  padding: 30px 40px;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  width: 300px;
+  width: 320px;
+  text-align: center;
 }
 
 h2 {
-  text-align: center;
-  margin-bottom: 20px;
   color: #333;
+  margin-bottom: 10px;
+}
+
+p {
+  color: #777;
+  font-size: 14px;
+  margin-bottom: 20px;
 }
 
 label {
   display: block;
   margin-top: 15px;
+  text-align: left;
   color: #555;
 }
 
-input[type="text"],
-input[type="email"],
-input[type="tel"],
-input[type="password"] {
+input[type="email"] {
   width: 100%;
   padding: 10px;
   margin-top: 5px;
@@ -40,14 +45,12 @@ input[type="password"] {
   box-sizing: border-box;
 }
 
-#buttonVoltar {
-  position: absolute;
-  left: 10px;
-  top: 10px;
-
+button {
   width: 100px;
   padding: 10px;
+  padding: 10px;
   margin-top: 20px;
+  background-color: #151717;
   border: none;
   color: white;
   font-size: 16px;
@@ -55,26 +58,22 @@ input[type="password"] {
   cursor: pointer;
 }
 
-#buttonVoltar.voltar {
-  background-color: #ccc;
-  color: #333;
-  margin-top: 10px;
+button:hover {
+  background-color: #252727;
 }
 
-#buttonVoltar.voltar:hover {
+button.voltar {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  background-color: #ccc;
+  color: #333;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button.voltar:hover {
   background-color: #bbb;
-}
-#buttonCadastrar {
-    width: 100px;
-    padding: 10px;
-    margin-top: 20px;
-    background-color: #151717;
-    border: none;
-    color: white;
-    font-size: 16px;
-    border-radius: 5px;
-    cursor: pointer;
-}
-#buttonCadastrar-submit:hover{
-    background-color: #252727;
 }
