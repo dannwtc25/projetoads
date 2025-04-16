@@ -2,7 +2,7 @@
 <html lang="pt-br">
   <head>
     <meta charset="UTF-8" />
-    <link href="css/style.css" rel="stylesheet" />
+    <link href="css/produtos.css" rel="stylesheet" />
     <title>Produtos - TemperoDoNordeste</title>
     <link
       href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
@@ -14,13 +14,19 @@
       href="https://fonts.googleapis.com/css2?family=Noto+Serif+Hentaigana:wght@200..900&display=swap"
       rel="stylesheet"
     />
+    <script src="js/vermais.js"></script>
   </head>
   <body>
     <!-- Barra de navegação (Navbar) -->
     <div class="navbar">
       <!-- Logo da empresa (posicionada à esquerda) -->
       <div class="logo">
-        <img src="img/logo.png" width="auto" height="auto" alt="Logo da Empresa" />
+        <img
+          src="img/ChatGPT Image 14 de abr. de 2025, 10_37_04.png"
+          width="auto"
+          height="auto"
+          alt="Logo da Empresa"
+        />
       </div>
 
       <!-- Menu (centralizado) -->
@@ -38,7 +44,9 @@
         <div class="search-bar">
           <svg viewBox="0 0 24 24" aria-hidden="true" class="search-icon">
             <g>
-              <path d="M21.53 20.47l-3.66-3.66C19.195 15.24 20 13.214 20 11c0-4.97-4.03-9-9-9s-9 4.03-9 9 4.03 9 9 9c2.215 0 4.24-.804 5.808-2.13l3.66 3.66c.147.146.34.22.53.22s.385-.073.53-.22c.295-.293.295-.767.002-1.06zM3.5 11c0-4.135 3.365-7.5 7.5-7.5s7.5 3.365 7.5 7.5-3.365 7.5-7.5 7.5-7.5-3.365-7.5-7.5z"></path>
+              <path
+                d="M21.53 20.47l-3.66-3.66C19.195 15.24 20 13.214 20 11c0-4.97-4.03-9-9-9s-9 4.03-9 9 4.03 9 9 9c2.215 0 4.24-.804 5.808-2.13l3.66 3.66c.147.146.34.22.53.22s.385-.073.53-.22c.295-.293.295-.767.002-1.06zM3.5 11c0-4.135 3.365-7.5 7.5-7.5s7.5 3.365 7.5 7.5-3.365 7.5-7.5 7.5-7.5-3.365-7.5-7.5z"
+              ></path>
             </g>
           </svg>
           <input
@@ -52,7 +60,12 @@
         </div>
         <!-- Login -->
         <a href="login.html">
-          <div aria-label="Botão Login" tabindex="0" role="button" class="user-perfil">
+          <div
+            aria-label="Botão Login"
+            tabindex="0"
+            role="button"
+            class="user-perfil"
+          >
             <div class="usuario-perfil-interno">
               <p>Login</p>
             </div>
@@ -63,49 +76,89 @@
 
     <!-- Conteúdo Principal -->
     <main>
-      <h1><p class="fonteL">Nossos Produtos</p></h1>
-      
+      <h1 class="fonteL">Nossos Produtos</h1>
+
       <div class="produtos-grid">
+        <!-- Produto 1 -->
         <div class="produto-card">
-          <img src="img/tempero-baiano.jpg" alt="Tempero Baiano" />
+          <img src="img/temperobaiano.jpg" alt="Tempero Baiano" />
           <h3>Tempero Baiano</h3>
           <p>Mistura especial de ervas e especiarias típicas da Bahia</p>
           <button class="comprar-btn">Comprar</button>
         </div>
 
+        <!-- Produto 2 -->
         <div class="produto-card">
-          <img src="img/pimenta-do-reino.jpg" alt="Pimenta do Reino" />
+          <img src="img/pimentadoreino.webp" alt="Pimenta do Reino" />
           <h3>Pimenta do Reino</h3>
           <p>Pimenta do reino moída na hora</p>
           <button class="comprar-btn">Comprar</button>
         </div>
 
+        <!-- Produto 3 -->
         <div class="produto-card">
-          <img src="img/cominho.jpg" alt="Cominho" />
+          <img src="img/cominho.webp" alt="Cominho" />
           <h3>Cominho</h3>
           <p>Cominho em pó para realçar o sabor dos seus pratos</p>
           <button class="comprar-btn">Comprar</button>
         </div>
 
+        <!-- Produto 4 -->
         <div class="produto-card">
-          <img src="img/colorau.jpg" alt="Colorau" />
+          <img src="img/colorau.png" alt="Colorau" />
           <h3>Colorau</h3>
           <p>Colorau natural para dar cor e sabor às suas receitas</p>
           <button class="comprar-btn">Comprar</button>
         </div>
       </div>
     </main>
-
+    <div class="ver-mais-container">
+      <button id="verMaisBtn" class="ver-mais-btn">Ver Mais</button>
+    </div>
+    <!-- Produtos adicionais (escondidos inicialmente) -->
+    <div class="produtos-grid" id="produtosExtras" style="display: none">
+      <div class="produto-card">
+        <img src="img/ervasfinas.webp" alt="Ervas Finas" />
+        <h3>Ervas Finas</h3>
+        <p>Mix aromático ideal para carnes e legumes.</p>
+        <button class="comprar-btn">Comprar</button>
+      </div>
+      <div class="produto-card">
+        <img src="img/paprica.jpg" alt="Páprica" />
+        <h3>Páprica</h3>
+        <p>Toque levemente defumado para realçar sabores.</p>
+        <button class="comprar-btn">Comprar</button>
+      </div>
+      <div class="produto-card">
+        <img src="img/coentro.jpg" alt="Pimenta Vermelha" />
+        <h3>Coentro</h3>
+        <p>Para quem gosta de um sabor mais picante.</p>
+        <button class="comprar-btn">Comprar</button>
+      </div>
+    </div>
     <!-- Rodapé -->
     <footer>
       <p>&copy; 2025 Tempero do Nordeste. Todos os direitos reservados.</p>
       <!-- Formulário de registro -->
       <div class="registration-form">
         <h3>Registre-se para mais informações</h3>
-        <p>Registre-se e receba por e-mail as últimas novidades do Tempero Do Nordeste e do mercado!</p>
+        <p>
+          Registre-se e receba por e-mail as últimas novidades do Tempero Do
+          Nordeste e do mercado!
+        </p>
         <form action="/registro" method="POST">
-          <input type="text" name="nome" placeholder="Seu nome" required /><br />
-          <input type="email" name="email" placeholder="Seu e-mail" required /><br />
+          <input
+            type="text"
+            name="nome"
+            placeholder="Seu nome"
+            required
+          /><br />
+          <input
+            type="email"
+            name="email"
+            placeholder="Seu e-mail"
+            required
+          /><br />
           <button type="submit">Registrar</button>
         </form>
       </div>
