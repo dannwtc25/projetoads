@@ -16,4 +16,178 @@
       rel="stylesheet"
     />
   </head>
+  <body>
+    <!-- Barra de navegação (Navbar) -->
+    <div class="navbar">
+      <!-- Logo da empresa (posicionada à esquerda) -->
+      <div class="logo">
+        <img
+          src="img/ChatGPT Image 14 de abr. de 2025, 10_37_04.png"
+          width="auto"
+          height="auto"
+          alt="Logo da Empresa"
+        />
+      </div>
+
+      <!-- Menu (centralizado) -->
+      <div class="menu">
+        <ul>
+          <li><a href="index.html">Página Inicial</a></li>
+          <li class="menu-item"><a href="receitas.html">Receitas</a></li>
+          <li class="menu-item"><a href="produtos.html">Produtos</a></li>
+          <li class="menu-item"><a href="dicas.html">Dicas</a></li>
+        </ul>
+      </div>
+      <!-- Barra de pesquisa e login (lado a lado) -->
+      <div class="search-login">
+        <!-- Barra de pesquisa -->
+        <div class="search-bar">
+          <svg viewBox="0 0 24 24" aria-hidden="true" class="search-icon">
+            <g>
+              <path
+                d="M21.53 20.47l-3.66-3.66C19.195 15.24 20 13.214 20 11c0-4.97-4.03-9-9-9s-9 4.03-9 9 4.03 9 9 9c2.215 0 4.24-.804 5.808-2.13l3.66 3.66c.147.146.34.22.53.22s.385-.073.53-.22c.295-.293.295-.767.002-1.06zM3.5 11c0-4.135 3.365-7.5 7.5-7.5s7.5 3.365 7.5 7.5-3.365 7.5-7.5 7.5-7.5-3.365-7.5-7.5z"
+              ></path>
+            </g>
+          </svg>
+          <input
+            id="query"
+            class="input"
+            type="search"
+            placeholder="Procurar..."
+            name="searchbar"
+            aria-label="Campo de pesquisa"
+          />
+        </div>
+        <!-- Login -->
+        <a href="login.html">
+          <div
+            aria-label="Botão Login"
+            tabindex="0"
+            role="button"
+            class="user-perfil"
+          >
+            <div class="usuario-perfil-interno">
+              <p>Login</p>
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+    <!-- Conteúdo Principal -->
+    <main>
+      <h1 class="titulo">Receitas com Tempero do Nordeste</h1>
+
+      <!-- Seção de receitas principais -->
+      <section class="receitas-principais">
+        <h2>Receitas Principais</h2>
+        <div class="receitas-grid">
+          <div class="receita-card">
+            <img src="img/feijaotropeiro.jpg" alt="Feijão Tropeiro" />
+            <h3>Feijão Tropeiro com Tempero Baiano</h3>
+            <p>
+              Uma receita deliciosa e tradicional, com um toque especial do
+              Tempero Baiano.
+            </p>
+            <a href="Receitas/feijaotropeiro.html" class="btn">Ver Receita</a>
+          </div>
+          <div class="receita-card">
+            <img src="img/carnedesol.webp" alt="Carne de Sol" />
+            <h3>Carne de Sol com Colorau</h3>
+            <p>Carne de sol assada com o sabor único do Colorau.</p>
+            <a href="carnedesol.html" class="btn">Ver Receita</a>
+          </div>
+          <div class="receita-card">
+            <img src="img/frangoassado.webp" alt="Frango Assado" />
+            <h3>Frango Assado com Ervas Finas</h3>
+            <p>Frango suculento com a mistura perfeita de ervas finas.</p>
+            <a href="frangoassado.html" class="btn">Ver Receita</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Seção de categorias -->
+      <section class="categorias">
+        <h2>Categorias de Receitas</h2>
+        <div class="categorias-grid">
+          <div class="categoria">
+            <h3>Pratos Principais</h3>
+            <p>Receitas principais deliciosas e simples de preparar.</p>
+            <a href="pratos-principais.html" class="btn">Ver Mais</a>
+          </div>
+          <div class="categoria">
+            <h3>Acompanhamentos</h3>
+            <p>Acompanhamentos perfeitos para as suas refeições.</p>
+            <a href="acompanhamentos.html" class="btn">Ver Mais</a>
+          </div>
+          <div class="categoria">
+            <h3>Molhos e Temperos</h3>
+            <p>
+              Aprenda a preparar molhos e temperos que complementam suas
+              receitas.
+            </p>
+            <a href="molhos-temperos.html" class="btn">Ver Mais</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Seção de receitas do mês -->
+      <section class="receitas-do-mes">
+        <h2>Receita do Mês</h2>
+        <div class="receita-card">
+          <img src="img/receita_mes.jpg" alt="Receita do Mês" />
+          <h3>Arroz Carreteiro com Tempero Baiano</h3>
+          <p>
+            Receita especial para o mês, utilizando nosso Tempero Baiano para um
+            sabor incomparável.
+          </p>
+          <a href="arrozcarreteiro.html" class="btn">Ver Receita</a>
+        </div>
+      </section>
+
+      <!-- Seção de vídeos de receitas -->
+      <section class="videos">
+        <h2>Aprenda com Nossos Vídeos</h2>
+        <div class="video-grid">
+          <div class="video-card">
+            <iframe
+              width="560"
+              height="315"
+              src="https://www.youtube.com/embed/VIDEO_ID"
+              frameborder="0"
+              allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+            ></iframe>
+            <h3>Frango Assado com Ervas Finas</h3>
+          </div>
+          <div class="video-card">
+            <iframe
+              width="560"
+              height="315"
+              src="https://www.youtube.com/embed/VIDEO_ID"
+              frameborder="0"
+              allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+            ></iframe>
+            <h3>Feijão Tropeiro com Tempero Baiano</h3>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <p>&copy; 2025 Tempero do Nordeste. Todos os direitos reservados.</p>
+      <!-- Formulário de registro -->
+      <div class="registration-form">
+        <h3>Registre-se para mais informações</h3>
+        <p>
+          Registre-se e receba por e-mail as últimas novidades do Tempero Do
+          Nordeste e do mercado!
+        </p>
+        <form action="/registro" method="POST">
+          <button type="submit"><a href="cadastro.html">Registrar</a></button>
+        </form>
+      </div>
+    </footer>
+    <script src="js/form-validation.js"></script>
+    <script src="js/navegation.js"></script>
+  </body>
 </html>

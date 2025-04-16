@@ -194,9 +194,22 @@ a {
   text-decoration: none;
   color: white;
 }
+a:hover {
+  text-decoration: none;
+  color: white;
+}
+a:focus {
+  text-decoration: none;
+  color: white;
+}
+a:visited {
+  text-decoration: none;
+  color: white;
+}
 .fonteL {
   text-align: center;
   padding-top: 30px;
+  color: #8c4c2e;
 }
 /*rodape*/
 footer {
