@@ -1,3 +1,250 @@
+/* Resetando margens e preenchimentos do body */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* Garantir que o box-sizing seja o mesmo para todos os elementos */
+}
+/* Barra de navegação */
+.navbar {
+  display: flex;
+  justify-content: space-between; /* Alinha os itens nas extremidades */
+  align-items: center; /* Alinha verticalmente */
+  flex-wrap: wrap; /* Permite que os elementos se ajustem quando a tela for menor */
+}
+
+/* Logo */
+.logo img {
+  height: 130px;
+}
+img:hover {
+  transform: scale(1.1);
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Menu */
+.menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+  display: flex; /* Exibe o menu em linha */
+  justify-content: center; /* Centraliza os itens */
+  gap: 30px; /* Espaçamento entre os itens */
+}
+
+.menu ul li {
+  position: relative;
+}
+
+.menu ul li a {
+  color: rgb(255, 255, 255); /* Cor do texto para preto */
+  text-decoration: none;
+  font-size: 1rem;
+  padding: 12px 20px;
+  display: inline-block;
+  font-weight: 600; /* Tornando o texto um pouco mais ousado */
+  text-transform: uppercase; /* Texto em caixa alta */
+  border-radius: 8px; /* Bordas arredondadas para suavizar */
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease; /* Efeito suave */
+}
+
+/* Efeito de hover para dar destaque */
+.menu ul li a:hover {
+  background-color: #f39c12; /* Cor dourada ao passar o mouse */
+  color: white; /* Texto branco ao passar o mouse */
+  transform: translateY(-3px); /* Efeito de elevação */
+}
+
+/* Efeito de foco ou quando o item é selecionado */
+.menu ul li a:focus,
+.menu ul li a:active {
+  background-color: #e67e22; /* Cor mais escura quando o item é ativo */
+  color: white;
+  transform: translateY(0); /* Removendo a elevação */
+}
+
+/* Adicionando uma linha abaixo do item de menu ao passar o mouse */
+.menu ul li a::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 3px;
+  background-color: #f39c12; /* Cor da linha */
+  transition: width 0.3s ease;
+}
+
+.menu ul li a:hover::after {
+  width: 100%; /* A linha irá se expandir para preencher o item */
+}
+
+/* Adicionando um fundo sutil para o menu */
+.navbar {
+  background-color: #8c4c2e; /* Cor de fundo escura */
+  padding: 10px 0; /* Espaçamento interno */
+}
+
+/* Estilos de responsividade */
+@media (max-width: 768px) {
+  .menu ul {
+    flex-direction: column; /* Empilha os itens do menu em telas menores */
+    width: 100%;
+    gap: 10px; /* Reduz o espaço entre os itens */
+  }
+
+  .menu ul li a {
+    padding: 10px 15px; /* Ajusta o padding para telas menores */
+  }
+}
+
+/* Barra de pesquisa */
+.search-bar {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+.input {
+  font-family: "Montserrat", sans-serif;
+  width: 200px;
+  height: 45px;
+  padding-left: 2.5rem;
+  box-shadow: 0 0 0 1.5px #98989e, 0 0 25px -17px #000;
+  border: 0;
+  border-radius: 12px;
+  background-color: #ffffff;
+  outline: none;
+  color: #bdbecb;
+  transition: all 0.25s cubic-bezier(0.19, 1, 0.22, 1);
+  cursor: text;
+}
+
+.input::placeholder {
+  color: #bdbecb;
+}
+
+.input:hover,
+.input:focus {
+  box-shadow: 0 0 0 2.5px #f39c12, 0px 0px 25px -15px #000;
+}
+
+.input:focus {
+  box-shadow: 0 0 0 2.5px #f39c12;
+}
+
+.search-icon {
+  position: absolute;
+  left: 1rem;
+  fill: #bdbecb;
+  width: 1rem;
+  height: 1rem;
+  pointer-events: none;
+}
+
+/* Login e Barra de Pesquisa juntos */
+.search-login {
+  display: flex;
+  align-items: center; /* Alinha os elementos verticalmente */
+  gap: 20px; /* Espaço entre a barra de pesquisa e o botão de login */
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .menu ul {
+    flex-direction: column;
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  .menu ul li {
+    margin: 5px 0;
+  }
+
+  .input {
+    width: 100%; /* Input ocupará toda a largura em telas pequenas */
+  }
+
+  .search-login {
+    width: 100%;
+    flex-direction: column; /* Para telas menores, os elementos serão empilhados */
+  }
+}
+
+/* LOGIN */
+.user-perfil {
+  width: 70px;
+  height: 70px;
+  border-radius: 100px;
+  cursor: pointer;
+  transition: 0.3s ease;
+  background-color: #f2542d;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave para dar destaque */
+}
+
+.user-perfil:hover,
+.user-perfil:focus {
+  background-color: #e67e22; /* Cor mais escura ao passar o mouse */
+  outline: none;
+  transform: translateY(-3px); /* Elevação suave ao passar o mouse */
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2); /* Aumenta a sombra para dar mais destaque */
+}
+
+.user-perfil-interno {
+  width: 120px;
+  height: 40px;
+  border-radius: 13px;
+  background-color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  color: #ffffff;
+  font-weight: 600;
+  text-transform: uppercase; /* Texto em caixa alta */
+  letter-spacing: 1px; /* Adiciona espaçamento entre as letras */
+  padding: 0 20px; /* Ajusta o espaçamento horizontal */
+  border-radius: 30px; /* Bordas arredondadas internas */
+  transition: 0.3s ease; /* Transição suave para cor */
+}
+/*links*/
+a {
+  text-decoration: none;
+  color: white;
+}
+a:hover {
+  text-decoration: none;
+  color: white;
+}
+a:focus {
+  text-decoration: none;
+  color: white;
+}
+a:visited {
+  text-decoration: none;
+  color: white;
+}
+.fonte {
+  font-family: "Noto Serif Hentaigana", serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  padding-left: 50px;
+  margin: 20px 10px;
+  text-align: left;
+}
+.fonteL {
+  color: #e08e1f;
+  padding-left: 50px;
+}
 main.receita-container {
   max-width: 800px;
   margin: 40px auto;
@@ -44,4 +291,3 @@ ol {
 .btn-voltar:hover {
   background-color: #e67e22;
 }
-
