@@ -15,6 +15,7 @@
       rel="stylesheet"
     />
     <script src="js/vermais.js"></script>
+    <script src="js/carrinho.js"></script>
   </head>
   <body>
     <!-- Barra de navegação (Navbar) -->
@@ -40,6 +41,28 @@
       </div>
       <!-- Barra de pesquisa e login (lado a lado) -->
       <div class="search-login">
+        <!-- Ícone do carrinho -->
+        <a href="carrinho.html" class="cart-link">
+          <div class="cart-container">
+            <svg
+              class="cart-icon"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <circle cx="9" cy="21" r="1"></circle>
+              <circle cx="20" cy="21" r="1"></circle>
+              <path
+                d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61l1.38-7.39H6"
+              ></path>
+            </svg>
+            <span id="cart-count">0</span>
+          </div>
+        </a>
+
         <!-- Barra de pesquisa -->
         <div class="search-bar">
           <svg viewBox="0 0 24 24" aria-hidden="true" class="search-icon">

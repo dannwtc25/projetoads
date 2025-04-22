@@ -375,3 +375,30 @@ footer {
     transform: translateY(0);
   }
 }
+/* Carrinho */
+.cart-container {
+  position: relative;
+  cursor: pointer;
+}
+
+.cart-icon {
+  width: 40px;
+  height: 40px;
+  color: white;
+}
+
+#cart-count {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  background-color: red;
+  color: white;
+  font-size: 12px;
+  font-weight: bold;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

@@ -1,0 +1,138 @@
+body {
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+  background-color: #f9f9f9;
+}
+
+.navbar {
+  background-color: #ffcc00;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo img {
+  height: 50px;
+}
+
+.menu ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.menu ul li {
+  margin-left: 20px;
+}
+
+.menu ul li a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+}
+
+main {
+  padding: 40px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 40px;
+  color: #333;
+}
+
+.carrinho-container {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.carrinho-itens {
+  flex: 2;
+}
+
+.item-carrinho {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  margin-bottom: 20px;
+  overflow: hidden;
+}
+
+.item-carrinho img {
+  width: 120px;
+  object-fit: cover;
+}
+
+.info-item {
+  padding: 15px;
+}
+
+.info-item h3 {
+  margin: 0 0 10px;
+}
+
+.remover-btn {
+  margin-top: 10px;
+  padding: 8px 16px;
+  background-color: #ff4d4d;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.remover-btn:hover {
+  background-color: #e60000;
+}
+
+.resumo-carrinho {
+  flex: 1;
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.resumo-carrinho h2 {
+  margin-top: 0;
+}
+
+.resumo-carrinho p {
+  margin: 10px 0;
+  font-size: 16px;
+}
+
+.resumo-carrinho .total {
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.finalizar-btn {
+  width: 100%;
+  padding: 12px;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  margin-top: 20px;
+  cursor: pointer;
+}
+
+.finalizar-btn:hover {
+  background-color: #218838;
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  background-color: #ffcc00;
+  margin-top: 40px;
+  font-weight: bold;
+}
