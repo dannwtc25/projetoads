@@ -10,13 +10,30 @@
     <header>
       <h1>Seu Carrinho</h1>
     </header>
+
     <main>
-      <div id="carrinho-itens"></div>
-      <button id="finalizar-compra">Finalizar Compra</button>
+      <div class="carrinho-container">
+        <section id="carrinho-itens"></section>
+
+        <aside id="carrinho-resumo">
+          <h2>Resumo do Pedido</h2>
+          <div id="subtotal">
+            <span>Subtotal:</span>
+            <span id="subtotal-valor">R$ 0,00</span>
+          </div>
+          <div id="frete">
+            <span>Frete:</span>
+            <span id="frete-valor">A calcular</span>
+          </div>
+          <div id="total">
+            <span>Total:</span>
+            <span id="total-valor">R$ 0,00</span>
+          </div>
+          <button id="finalizar-compra">Finalizar Compra</button>
+          <a href="produtos.html" class="voltar-produtos">Continuar Comprando</a>
+        </aside>
+      </div>
     </main>
-    <footer>
-      <p>&copy; 2025 Tempero do Nordeste</p>
-    </footer>
     <script src="js/carrinho.js"></script>
   </body>
 </html>

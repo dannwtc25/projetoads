@@ -1,140 +1,102 @@
- // Função para adicionar um produto ao carrinho
- function adicionarAoCarrinho(produto) {
-  let carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
-  carrinho.push(produto);
-  localStorage.setItem('carrinho', JSON.stringify(carrinho));
-  atualizarContadorCarrinho();
+// carrinho.js
+
+// Função para formatar o preço
+function formatarPreco(preco) {
+  return preco.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
 }
 
-// Função para atualizar o contador do carrinho no ícone
-function atualizarContadorCarrinho() {
-  let carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
-  const contador = document.getElementById('cart-count');
-  if (contador) {
-    contador.textContent = carrinho.length;
-  }
+// Função para calcular o subtotal
+function calcularSubtotal(carrinho) {
+  let subtotal = 0;
+  carrinho.forEach(item => {
+      subtotal += item.preco;
+  });
+  return subtotal;
 }
 
-// Função para exibir os itens do carrinho na página carrinho.html
-function exibirCarrinho() {
+// Função para calcular o frete (simulado)
+function calcularFrete(carrinho) {
+  const subtotal = calcularSubtotal(carrinho);
+  return subtotal > 100 ? 0 : 10;
+}
+
+// Função para calcular o total
+function calcularTotal(subtotal, frete) {
+  return subtotal + frete;
+}
+
+// Função para exibir os detalhes do carrinho
+function exibirDetalhesCarrinho(carrinho) {
   const carrinhoItens = document.getElementById('carrinho-itens');
-  let carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
+  const subtotalValor = document.getElementById('subtotal-valor');
+  const freteValor = document.getElementById('frete-valor');
+  const totalValor = document.getElementById('total-valor');
 
-  if (!carrinhoItens) return; // Verifica se o elemento existe
+  if (!carrinhoItens || !subtotalValor || !freteValor || !totalValor) {
+      console.error('Um ou mais elementos do carrinho não foram encontrados.');
+      return;
+  }
 
-  carrinhoItens.innerHTML = ''; // Limpa o conteúdo anterior
+  carrinhoItens.innerHTML = '';
 
   if (carrinho.length === 0) {
-    carrinhoItens.innerHTML = '<p>Seu carrinho está vazio.</p>';
-    return;
+      carrinhoItens.innerHTML = '<p>Seu carrinho está vazio.</p>';
+      subtotalValor.textContent = formatarPreco(0);
+      freteValor.textContent = 'A calcular';
+      totalValor.textContent = formatarPreco(0);
+      return;
   }
 
-  carrinho.forEach(item => {
-    const itemDiv = document.createElement('div');
-    itemDiv.classList.add('item-carrinho');
-    itemDiv.innerHTML = `
-      <img src="${item.imagem}" alt="${item.nome}">
-      <div>
-        <h3>${item.nome}</h3>
-        <p>Preço: R$ ${item.preco.toFixed(2)}</p>
-      </div>
-    `;
-    carrinhoItens.appendChild(itemDiv);
+  carrinho.forEach((item, index) => { // Modificação: Adicionar index
+      const itemDiv = document.createElement('div');
+      itemDiv.classList.add('item-carrinho');
+      itemDiv.innerHTML = `
+          <img src="${item.imagem}" alt="${item.nome}" style="width: 100px; height: 100px; margin-right: 15px;">
+          <div>
+              <h3>${item.nome}</h3>
+              <p>Preço: ${formatarPreco(item.preco)}</p>
+              <button class="remover-item" data-index="${index}">Remover</button> </div>
+      `;
+      carrinhoItens.appendChild(itemDiv);
+  });
+
+  const subtotal = calcularSubtotal(carrinho);
+  const frete = calcularFrete(carrinho);
+  const total = calcularTotal(subtotal, frete);
+
+  subtotalValor.textContent = formatarPreco(subtotal);
+  freteValor.textContent = frete === 0 ? 'Grátis' : formatarPreco(frete);
+  totalValor.textContent = formatarPreco(total);
+
+  // Modificação: Adicionar event listeners para os botões de remover
+  const botoesRemover = document.querySelectorAll('.remover-item');
+  botoesRemover.forEach(botao => {
+      botao.addEventListener('click', () => {
+          const index = parseInt(botao.dataset.index);
+          removerItemDoCarrinho(carrinho, index);
+      });
   });
 }
 
-// Event listeners
+// Modificação: Função para remover item do carrinho
+function removerItemDoCarrinho(carrinho, index) {
+  carrinho.splice(index, 1);
+  localStorage.setItem('carrinho', JSON.stringify(carrinho));
+  exibirDetalhesCarrinho(carrinho); // Atualizar a exibição
+}
+
+// Carregar o carrinho e exibir os detalhes
 document.addEventListener('DOMContentLoaded', () => {
-  atualizarContadorCarrinho(); // Atualiza o contador ao carregar a página
-  if (window.location.pathname.includes('carrinho.html')) {
-    exibirCarrinho(); // Exibe os itens se estiver na página do carrinho
-  }
+  const carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
+  exibirDetalhesCarrinho(carrinho);
 
-  // Adiciona listeners para os botões "Comprar"
-  const botoesComprar = document.querySelectorAll('.comprar-btn');
-  botoesComprar.forEach(botao => {
-    botao.addEventListener('click', () => {
-      const produto = JSON.parse(botao.dataset.produto);
-      console.log('Produto a ser adicionado:', produto); // Novo log
-      adicionarAoCarrinho(produto);
-      
-    });
-  });
-
-  // Finalizar compra (na página do carrinho)
+  // Finalizar compra
   const finalizarCompraBtn = document.getElementById('finalizar-compra');
   if (finalizarCompraBtn) {
-    finalizarCompraBtn.addEventListener('click', () => {
-      localStorage.removeItem('carrinho');
-      alert('Compra finalizada!');
-      window.location.href = 'produtos.html'; // Redireciona para a página de produtos
-    });
+      finalizarCompraBtn.addEventListener('click', () => {
+          alert('Compra finalizada com sucesso!');
+          localStorage.removeItem('carrinho');
+          window.location.href = 'produtos.html';
+      });
   }
-});
-function carregarCarrinho() {
-  let carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
-  console.log('Carrinho carregado:', carrinho);
-  let container = document.getElementById('carrinho-itens');
-
-  if (!container) {
-      console.warn('Container carrinho-itens não encontrado');
-      return;
-  }
-
-  if (carrinho.length === 0) {
-      container.innerHTML = "<p>Seu carrinho está vazio.</p>";
-      return;
-  }
-
-  container.innerHTML = "";
-
-  carrinho.forEach((produto, index) => { // Adicionamos o 'index' aqui
-      console.log('Produto:', produto);
-      let item = document.createElement('div');
-      item.classList.add('item-carrinho');
-      item.innerHTML = `
-          <img src="${produto.imagem}" alt="${produto.nome}">
-          <div>
-              <h3>${produto.nome}</h3>
-              <p>Preço: R$ ${produto.preco.toFixed(2)}</p>
-              <button class="remover-item" data-index="${index}">Remover</button>  
-          </div>
-      `;
-      container.appendChild(item);
-  });
-}
-// Função para remover um item do carrinho
-function removerItemDoCarrinho(index) {
-    let carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
-    carrinho.splice(index, 1); // Remove o item do array
-    localStorage.setItem('carrinho', JSON.stringify(carrinho)); // Atualiza o localStorage
-    carregarCarrinho(); // Recarrega os itens na página
-    atualizarContadorCarrinho(); // Atualiza o contador (se necessário)
-}
-
-// Ao carregar a página
-document.addEventListener('DOMContentLoaded', () => {
-    atualizarContadorCarrinho();
-    carregarCarrinho();
-
-    // Finalizar compra
-    const finalizar = document.getElementById('finalizar-compra');
-    if (finalizar) {
-        finalizar.addEventListener('click', () => {
-            alert('Compra finalizada com sucesso!');
-            localStorage.removeItem('carrinho');
-            location.reload();
-        });
-    }
-
-    // Event listener para os botões de remover
-    const container = document.getElementById('carrinho-itens');
-    if (container) {
-        container.addEventListener('click', (event) => {
-            if (event.target.classList.contains('remover-item')) {
-                const index = parseInt(event.target.dataset.index);
-                removerItemDoCarrinho(index);
-            }
-        });
-    }
 });
