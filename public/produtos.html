@@ -15,7 +15,6 @@
       rel="stylesheet"
     />
     <script src="js/vermais.js"></script>
-    <script src="js/carrinho.js"></script>
   </head>
   <body>
     <!-- Barra de navegação (Navbar) -->
@@ -107,7 +106,13 @@
           <img src="img/temperobaiano.jpg" alt="Tempero Baiano" />
           <h3>Tempero Baiano</h3>
           <p>Mistura especial de ervas e especiarias típicas da Bahia</p>
-          <button class="comprar-btn">Comprar</button>
+          <p>R$ 14,99</p>
+          <button
+            class="comprar-btn"
+            data-produto='{"nome": "Tempero Baiano", "preco": 14.99, "imagem": "img/temperobaiano.jpg"}'
+          >
+            Comprar
+          </button>
         </div>
 
         <!-- Produto 2 -->
@@ -115,7 +120,13 @@
           <img src="img/pimentadoreino.webp" alt="Pimenta do Reino" />
           <h3>Pimenta do Reino</h3>
           <p>Pimenta do reino moída na hora</p>
-          <button class="comprar-btn">Comprar</button>
+          <p>R$ 9,99</p>
+          <button
+            class="comprar-btn"
+            data-produto='{"nome": "Pimenta do Reino", "preco": 9.99, "imagem": "img/pimentadoreino.webp"}'
+          >
+            Comprar
+          </button>
         </div>
 
         <!-- Produto 3 -->
@@ -123,7 +134,13 @@
           <img src="img/cominho.webp" alt="Cominho" />
           <h3>Cominho</h3>
           <p>Cominho em pó para realçar o sabor dos seus pratos</p>
-          <button class="comprar-btn">Comprar</button>
+          <p>R$ 4,99</p>
+          <button
+            class="comprar-btn"
+            data-produto='{"nome": "Cominho", "preco": 4.99, "imagem": "img/cominho.webp"}'
+          >
+            Comprar
+          </button>
         </div>
 
         <!-- Produto 4 -->
@@ -131,7 +148,13 @@
           <img src="img/colorau.png" alt="Colorau" />
           <h3>Colorau</h3>
           <p>Colorau natural para dar cor e sabor às suas receitas</p>
-          <button class="comprar-btn">Comprar</button>
+          <p>R$ 12,99</p>
+          <button
+            class="comprar-btn"
+            data-produto='{"nome": "Colorau", "preco": 12.99, "imagem": "img/colorau.png"}'
+          >
+            Comprar
+          </button>
         </div>
       </div>
     </main>
@@ -144,19 +167,37 @@
         <img src="img/ervasfinas.webp" alt="Ervas Finas" />
         <h3>Ervas Finas</h3>
         <p>Mix aromático ideal para carnes e legumes.</p>
-        <button class="comprar-btn">Comprar</button>
+        <p>R$ 9,99</p>
+        <button
+            class="comprar-btn"
+            data-produto='{"nome": "Ervas Finas", "preco": 9.99, "imagem": "img/ervasfinas.webp"}'
+          >
+          Comprar
+        </button>
       </div>
       <div class="produto-card">
         <img src="img/paprica.jpg" alt="Páprica" />
         <h3>Páprica</h3>
         <p>Toque levemente defumado para realçar sabores.</p>
-        <button class="comprar-btn">Comprar</button>
+        <p>R$ 19,99</p>
+        <button
+            class="comprar-btn"
+            data-produto='{"nome": "Paprica", "preco": 19.99, "imagem": "img/paprica.jpg"}'
+          >
+          Comprar
+        </button>
       </div>
       <div class="produto-card">
         <img src="img/coentro.jpg" alt="Pimenta Vermelha" />
         <h3>Coentro</h3>
         <p>Para quem gosta de um sabor mais picante.</p>
-        <button class="comprar-btn">Comprar</button>
+        <p>R$ 4,99</p>
+        <button
+            class="comprar-btn"
+            data-produto='{"nome": "Coentro", "preco": 4.99, "imagem": "img/coentro.jpg"}'
+          >
+          Comprar
+        </button>
       </div>
     </div>
     <!-- Rodapé -->
@@ -174,7 +215,24 @@
         </form>
       </div>
     </footer>
+    <!-- Carrinho Popup -->
+    <div id="carrinho-popup" class="fechado">
+      <button id="fechar-carrinho">✖</button>
+      <h2>Seu Carrinho</h2>
+      <ul id="lista-carrinho"></ul>
+      <p id="total-carrinho">Total: R$0,00</p>
+      <button id="finalizar-compra-popup">Finalizar Compra</button>
+    </div>
+
+    <div id="overlay" class="escondido"></div>
+
+    <!-- Mensagem Produto Adicionado -->
+    <div id="mensagem-adicionado" class="mensagem-adicionado escondido">
+      Produto adicionado! ✅
+    </div>
     <script src="js/form-validation.js"></script>
     <script src="js/navegation.js"></script>
+    <script src="js/carrinho.js"></script>
+    <script src="js/carrinhopopup.js"></script>
   </body>
 </html>
