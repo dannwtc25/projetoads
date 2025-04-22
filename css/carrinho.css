@@ -8,7 +8,7 @@ body {
 }
 
 header {
-  background-color: #333;
+  background-color: #8c4c2e;
   color: white;
   padding: 10px;
   display: flex;
@@ -95,7 +95,7 @@ h1 {
 #finalizar-compra {
   margin-top: 20px;
   padding: 10px;
-  background-color: #333;
+  background-color: #f39c12;
   color: white;
   border: none;
   cursor: pointer;
@@ -103,7 +103,7 @@ h1 {
 }
 
 #finalizar-compra:hover {
-  background-color: #555;
+  background-color: #d88b0e;
 }
 .remover-item {
   background-color: #dc3545; /* Vermelho */
