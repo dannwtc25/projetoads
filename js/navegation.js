@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', function() {
             
             // Procura nas keywords
             const foundPage = pages.find(page => 
-                page.keywords.some(keyword => keyword.includes(searchTerm))
+                page.keywords.some(keyaaaaword => keyword.includes(searchTerm))
             );
             
             if (foundPage) {
