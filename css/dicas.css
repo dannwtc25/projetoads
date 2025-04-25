@@ -227,8 +227,10 @@ a:visited {
     font-optical-sizing: auto;
     font-style: normal;
     padding-left: 50px;
+    padding-bottom: 50px;
     margin: 20px 10px;
-    text-align: left;
+    text-align: center;
+    color: #e08e1f;
 }
 
 .fonteL {
@@ -246,6 +248,7 @@ a:visited {
 ul {
     list-style: disc;
     margin-left: 20px;
+    list-style-type: none; /* Remove os pontos de lista */
 }
 
 ul li {
@@ -259,43 +262,58 @@ ul li {
     padding: 40px 20px;
 }
 
-/* Grid para organizar as seções */
+/* Grid para organizar os cards */
 .dicas-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 40px;
 }
 
-/* Seções de dicas */
-.secao-dicas {
+/* Card para cada dica */
+.card {
     background-color: #fff;
     padding: 20px;
     border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5); /* Sombra mais forte */
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    
 }
 
-.secao-dicas:hover {
+.card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.3); /* Sombra mais forte ao passar o mouse */
 }
 
-.destaque {
-    color: #f39c12;
-    font-weight: bold;
-}
-
+/* Imagem dentro do card */
 .imagem-dica {
     width: 100%;
-    max-width: 300px; /* Ou o tamanho que você achar ideal */
+    max-width: 300px;
     height: auto;
     display: block;
     margin: 10px 0;
-    border-radius: 10px; /* Opcional: bordas arredondadas para as imagens */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra sutil para dar destaque */
-    transition: transform 0.3s ease; /* Efeito de transição */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
 }
 
 .imagem-dica:hover {
     transform: scale(1.05); /* Aumenta a imagem ao passar o mouse */
+}
+/* Título das dicas */
+.fonteL {
+    color: #e08e1f;
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+/* Descrição da dica */
+.card-dica p {
+    font-size: 1rem;
+    color: #333;
+}
+/* Ajustes para telas pequenas */
+@media (max-width: 768px) {
+    .dicas-grid {
+        grid-template-columns: 1fr;
+    }
 }

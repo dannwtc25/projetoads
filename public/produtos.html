@@ -38,7 +38,7 @@
           <li class="menu-item"><a href="dicas.html">Dicas</a></li>
         </ul>
       </div>
-      
+
       <!-- Barra de pesquisa e login (lado a lado) -->
       <div class="search-login">
         <!-- Ícone do carrinho -->
@@ -79,7 +79,27 @@
             placeholder="Procurar..."
             name="searchbar"
             aria-label="Campo de pesquisa"
+            onkeyup="searchFunction()"
           />
+          <ul id="productList">
+            <li>Tempero Baiano</li>
+            <li>Pimenta do Reino</li>
+            <li>Colorau</li>
+            <li>Cominho</li>
+            <li>Ervas Finas</li>
+            <li>Páprica</li>
+            <li>Coentro</li>
+            <li>Canela</li>
+            <li>Cravo da Índia</li>
+            <li>Orégano</li>
+            <li>Açafrão</li>
+            <li>Manjericão</li>
+            <li>Cebola</li>
+            <li>Salsinha</li>
+            <li>Alho</li>
+            <li>Tomilho</li>
+          </ul>
+          <div id="search-results" class="search-message"></div>
         </div>
         <!-- Login -->
         <a href="login.html">
@@ -170,9 +190,9 @@
         <p>Mix aromático ideal para carnes e legumes.</p>
         <p>R$ 9,99</p>
         <button
-            class="comprar-btn"
-            data-produto='{"nome": "Ervas Finas", "preco": 9.99, "imagem": "img/ervasfinas.webp"}'
-          >
+          class="comprar-btn"
+          data-produto='{"nome": "Ervas Finas", "preco": 9.99, "imagem": "img/ervasfinas.webp"}'
+        >
           Comprar
         </button>
       </div>
@@ -182,9 +202,9 @@
         <p>Toque levemente defumado para realçar sabores.</p>
         <p>R$ 19,99</p>
         <button
-            class="comprar-btn"
-            data-produto='{"nome": "Paprica", "preco": 19.99, "imagem": "img/paprica.png"}'
-          >
+          class="comprar-btn"
+          data-produto='{"nome": "Paprica", "preco": 19.99, "imagem": "img/paprica.png"}'
+        >
           Comprar
         </button>
       </div>
@@ -194,21 +214,24 @@
         <p>Para quem gosta de um sabor mais picante.</p>
         <p>R$ 4,99</p>
         <button
-            class="comprar-btn"
-            data-produto='{"nome": "Coentro", "preco": 4.99, "imagem": "img/coentro.jpg"}'
-          >
+          class="comprar-btn"
+          data-produto='{"nome": "Coentro", "preco": 4.99, "imagem": "img/coentro.jpg"}'
+        >
           Comprar
         </button>
       </div>
       <div class="produto-card">
         <img src="img/canela.jpg" alt="Canela" />
         <h3>Canela</h3>
-        <p>A canela é uma especiaria versátil, usada tanto em pratos doces quanto salgados.</p>
+        <p>
+          A canela é uma especiaria versátil, usada tanto em pratos doces quanto
+          salgados.
+        </p>
         <p>R$ 4,99</p>
         <button
-            class="comprar-btn"
-            data-produto='{"nome": "Canela", "preco": 4.99, "imagem": "img/canela.jpg"}'
-          >
+          class="comprar-btn"
+          data-produto='{"nome": "Canela", "preco": 4.99, "imagem": "img/canela.jpg"}'
+        >
           Comprar
         </button>
       </div>
@@ -218,21 +241,23 @@
         <p>O aroma intenso do cravo da índia é marcante e inconfundível.</p>
         <p>R$ 14,99</p>
         <button
-            class="comprar-btn"
-            data-produto='{"nome": "Cravodaindia", "preco": 14.99, "imagem": "img/cravodaindia.webp"}'
-          >
+          class="comprar-btn"
+          data-produto='{"nome": "Cravodaindia", "preco": 14.99, "imagem": "img/cravodaindia.webp"}'
+        >
           Comprar
         </button>
       </div>
       <div class="produto-card">
-        <img src="img/oregano.png" alt="Oregano" />
+        <img src="img/oregano.png" alt="Orégano" />
         <h3>Orégano</h3>
-        <p>O orégano é uma erva aromática essencial na culinária mediterrânea.</p>
+        <p>
+          O orégano é uma erva aromática essencial na culinária mediterrânea.
+        </p>
         <p>R$ 6,99</p>
         <button
-            class="comprar-btn"
-            data-produto='{"nome": "oregano", "preco": 6.99, "imagem": "img/oregano.png"}'
-          >
+          class="comprar-btn"
+          data-produto='{"nome": "oregano", "preco": 6.99, "imagem": "img/oregano.png"}'
+        >
           Comprar
         </button>
       </div>
@@ -242,69 +267,84 @@
         <p>O açafrão dá um toque luxuoso e aromático a diversos pratos.</p>
         <p>R$ 6,99</p>
         <button
-            class="comprar-btn"
-            data-produto='{"nome": "açafrao", "preco": 6.99, "imagem": "img/açafrao.png"}'
-          >
+          class="comprar-btn"
+          data-produto='{"nome": "açafrao", "preco": 6.99, "imagem": "img/açafrao.png"}'
+        >
           Comprar
         </button>
       </div>
       <div class="produto-card">
         <img src="img/manjericao.png" alt="Manjericão" />
         <h3>Manjericão</h3>
-        <p>O manjericão fresco é um ingrediente essencial em muitas cozinhas ao redor do mundo.</p>
+        <p>
+          O manjericão fresco é um ingrediente essencial em muitas cozinhas ao
+          redor do mundo.
+        </p>
         <p>R$ 9,99</p>
         <button
-            class="comprar-btn"
-            data-produto='{"nome": "manjericao", "preco": 9.99, "imagem": "img/manjericao.png"}'
-          >
+          class="comprar-btn"
+          data-produto='{"nome": "manjericao", "preco": 9.99, "imagem": "img/manjericao.png"}'
+        >
           Comprar
         </button>
       </div>
       <div class="produto-card">
         <img src="img/cebola.png" alt="cebola" />
         <h3>Cebola</h3>
-        <p>A cebola é um dos pilares da culinária, presente em pratos de todo o mundo.</p>
+        <p>
+          A cebola é um dos pilares da culinária, presente em pratos de todo o
+          mundo.
+        </p>
         <p>R$ 3,99</p>
         <button
-            class="comprar-btn"
-            data-produto='{"nome": "cebola", "preco": 3.99, "imagem": "img/cebola.png"}'
-          >
+          class="comprar-btn"
+          data-produto='{"nome": "cebola", "preco": 3.99, "imagem": "img/cebola.png"}'
+        >
           Comprar
         </button>
       </div>
       <div class="produto-card">
         <img src="img/salsinha.png" alt="Salsinha" />
         <h3>Salsinha</h3>
-        <p>A salsinha é uma erva fresca e versátil, usada para dar um toque final a diversos pratos.</p>
+        <p>
+          A salsinha é uma erva fresca e versátil, usada para dar um toque final
+          a diversos pratos.
+        </p>
         <p>R$ 6,99</p>
         <button
-            class="comprar-btn"
-            data-produto='{"nome": "salsinha", "preco": 6.99, "imagem": "img/salsinha.png"}'
-          >
+          class="comprar-btn"
+          data-produto='{"nome": "salsinha", "preco": 6.99, "imagem": "img/salsinha.png"}'
+        >
           Comprar
         </button>
       </div>
       <div class="produto-card">
         <img src="img/alho.png" alt="Alho" />
         <h3>Alho</h3>
-        <p>O alho é um tempero essencial que adiciona um sabor robusto e característico a diversos pratos.</p>
+        <p>
+          O alho é um tempero essencial que adiciona um sabor robusto e
+          característico a diversos pratos.
+        </p>
         <p>R$ 4,99</p>
         <button
-            class="comprar-btn"
-            data-produto='{"nome": "alho", "preco": 4.99, "imagem": "img/alho.png"}'
-          >
+          class="comprar-btn"
+          data-produto='{"nome": "alho", "preco": 4.99, "imagem": "img/alho.png"}'
+        >
           Comprar
         </button>
       </div>
       <div class="produto-card">
         <img src="img/tomilho.png" alt="Tomilho" />
         <h3>Tomilho</h3>
-        <p>O tomilho fresco ou seco é um tempero versátil, usado em carnes, sopas, molhos e legumes.</p>
+        <p>
+          O tomilho fresco ou seco é um tempero versátil, usado em carnes,
+          sopas, molhos e legumes.
+        </p>
         <p>R$ 4,99</p>
         <button
-            class="comprar-btn"
-            data-produto='{"nome": "tomilho", "preco": 4.99, "imagem": "img/tomilho.png"}'
-          >
+          class="comprar-btn"
+          data-produto='{"nome": "tomilho", "preco": 4.99, "imagem": "img/tomilho.png"}'
+        >
           Comprar
         </button>
       </div>
@@ -340,6 +380,7 @@
       Produto adicionado! ✅
     </div>
     <script src="js/cartUtils.js"></script>
+    <script src="js/pesquisa.js"></script>
     <script src="js/form-validation.js"></script>
     <script src="js/navegation.js"></script>
     <script src="js/carrinho.js"></script>

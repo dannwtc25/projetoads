@@ -247,9 +247,7 @@ h2 {
   gap: 20px;
   padding: 20px;
 }
-
 .receita-card,
-.categoria,
 .video-card {
   background-color: #fff;
   padding: 20px;
@@ -257,13 +255,32 @@ h2 {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   text-align: center;
 }
-
-.receita-card img,
+.categoria{
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+.categoria img{
+  width: 100%;
+  border-radius: 8px;
+}
+.receita-mes-card{
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+.receita-card img {
+  width: 100%;
+  border-radius: 8px;
+}
 .video-card iframe {
   width: 100%;
   border-radius: 8px;
 }
-
 .btn {
   background-color: #f39c12;
   color: white;
