@@ -19,22 +19,54 @@
     <button type="button" onclick="history.back()" class="voltar" id="buttonVoltar">Voltar</button>
     <div class="container">
         <h2>Cadastro</h2>
-        <form>
-          <label for="nome">Nome</label>
-          <input type="text" id="nome" name="nome" required>
+        <div id="mensagem"></div>
+        <form id="formCadastro">
+          <label for="username">Nome de usuário</label>
+          <input type="text" id="username" name="username" required>
     
           <label for="email">E-mail</label>
           <input type="email" id="email" name="email" required>
-
-          <label for="Telefone">Telefone</label>
-          <input type="tel" id="número" name="Telefone" required>
     
-          <label for="senha">Senha</label>
-          <input type="password" id="senha" name="senha" required>
+          <label for="password">Senha</label>
+          <input type="password" id="password" name="password" required>
     
           <button type="submit" id="buttonCadastrar">Cadastrar</button>
         </form>
     </div>
-    </form>
+
+    <script>
+      document.getElementById('formCadastro').addEventListener('submit', async (e) => {
+        e.preventDefault();
+        
+        const username = document.getElementById('username').value;
+        const email = document.getElementById('email').value;
+        const password = document.getElementById('password').value;
+        
+        try {
+          const response = await fetch('/api/register', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+              username,
+              email,
+              password
+            })
+          });
+          
+          const data = await response.json();
+          
+          if (response.ok) {
+            document.getElementById('mensagem').innerHTML = '<p style="color: green;">Cadastro realizado com sucesso!</p>';
+            document.getElementById('formCadastro').reset();
+          } else {
+            document.getElementById('mensagem').innerHTML = `<p style="color: red;">Erro: ${data.error || data.errors?.[0]?.msg || 'Erro ao cadastrar'}</p>`;
+          }
+        } catch (error) {
+          document.getElementById('mensagem').innerHTML = '<p style="color: red;">Erro ao conectar com o servidor</p>';
+        }
+      });
+    </script>
   </body>
 </html>
